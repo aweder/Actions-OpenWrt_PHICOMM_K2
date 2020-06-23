@@ -15,8 +15,8 @@ on:
       - master
 #  schedule:
 #    - cron: 0 8 * * 5
-#  watch:
-#    types: [started]
+  watch:
+    types: [started]
 
 jobs:
   build:
@@ -270,10 +270,14 @@ jobs:
         # CONFIG_PACKAGE_luci-app-sqm is not set
         # CONFIG_PACKAGE_luci-app-squid is not set
         # CONFIG_PACKAGE_luci-app-ssr-libev-server is not set
+        CONFIG_PACKAGE_luci-app-ssr-plus=y
         # CONFIG_PACKAGE_luci-app-ssr-plus is not set
         # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks is not set
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
         # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray is not set
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
         # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan is not set
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
         # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun is not set
         # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server is not set
         # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks is not set
@@ -307,6 +311,10 @@ jobs:
         # CONFIG_PACKAGE_luci-app-wrtbwmon is not set
         # CONFIG_PACKAGE_luci-app-xlnetacc is not set
         # CONFIG_PACKAGE_luci-app-zerotier is not set
+        CONFIG_TARGET_PREINIT_IFNAME=""
+        CONFIG_TARGET_PREINIT_IP="192.168.8.1"
+        CONFIG_TARGET_PREINIT_NETMASK="255.255.255.0"
+        CONFIG_TARGET_PREINIT_BROADCAST="192.168.8.255"
         EOF
         # LuCI主题:
         # cat >> .config <<EOF
